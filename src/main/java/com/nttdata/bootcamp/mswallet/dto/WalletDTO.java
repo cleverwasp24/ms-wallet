@@ -9,5 +9,7 @@ public class WalletDTO {
     private String walletNumber;
     private Double balance;
     private Long debitCardId;
+    private String imeiNumber;
+    private String phoneNumber;
 
 }

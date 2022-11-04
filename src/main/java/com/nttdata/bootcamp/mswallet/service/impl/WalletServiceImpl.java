@@ -108,6 +108,12 @@ public class WalletServiceImpl implements WalletService {
         if (wallet.getBalance() == null || wallet.getBalance() < 0) {
             return Mono.error(new IllegalArgumentException("New wallet balance must be equal or greater than 0"));
         }
+        if (wallet.getPhoneNumber() == null || wallet.getPhoneNumber().trim().equals("")) {
+            return Mono.error(new IllegalArgumentException("Phone number cannot be empty"));
+        }
+        if (wallet.getImeiNumber() == null || wallet.getImeiNumber().trim().equals("")) {
+            return Mono.error(new IllegalArgumentException("Imei number cannot be empty"));
+        }
         return Mono.empty();
     }
 
