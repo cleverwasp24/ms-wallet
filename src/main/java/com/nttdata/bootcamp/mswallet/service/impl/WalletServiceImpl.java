@@ -4,6 +4,7 @@ import com.nttdata.bootcamp.mswallet.dto.WalletDTO;
 import com.nttdata.bootcamp.mswallet.infrastructure.WalletRepository;
 import com.nttdata.bootcamp.mswallet.mapper.WalletDTOMapper;
 import com.nttdata.bootcamp.mswallet.model.Wallet;
+import com.nttdata.bootcamp.mswallet.service.ClientService;
 import com.nttdata.bootcamp.mswallet.service.DebitCardService;
 import com.nttdata.bootcamp.mswallet.service.WalletService;
 import com.nttdata.bootcamp.mswallet.service.DatabaseSequenceService;
@@ -21,7 +22,7 @@ public class WalletServiceImpl implements WalletService {
     private WalletRepository walletRepository;
 
     @Autowired
-    private ClientServiceImpl clientService;
+    private ClientService clientService;
 
     @Autowired
     private DebitCardService debitCardService;

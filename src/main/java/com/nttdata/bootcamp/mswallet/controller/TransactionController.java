@@ -3,7 +3,7 @@ package com.nttdata.bootcamp.mswallet.controller;
 import com.nttdata.bootcamp.mswallet.dto.TransactionDTO;
 import com.nttdata.bootcamp.mswallet.dto.TransferDTO;
 import com.nttdata.bootcamp.mswallet.model.Transaction;
-import com.nttdata.bootcamp.mswallet.service.impl.TransactionServiceImpl;
+import com.nttdata.bootcamp.mswallet.service.TransactionService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,7 +18,7 @@ import reactor.core.publisher.Mono;
 public class TransactionController {
 
     @Autowired
-    TransactionServiceImpl transactionService;
+    TransactionService transactionService;
 
     @GetMapping(value = "/findAllTransactions")
     @ResponseBody

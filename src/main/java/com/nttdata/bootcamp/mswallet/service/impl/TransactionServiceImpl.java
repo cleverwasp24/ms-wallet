@@ -8,6 +8,7 @@ import com.nttdata.bootcamp.mswallet.model.Transaction;
 import com.nttdata.bootcamp.mswallet.model.enums.TransactionTypeEnum;
 import com.nttdata.bootcamp.mswallet.service.DatabaseSequenceService;
 import com.nttdata.bootcamp.mswallet.service.TransactionService;
+import com.nttdata.bootcamp.mswallet.service.WalletService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,7 +33,7 @@ public class TransactionServiceImpl implements TransactionService {
     private TransactionRepository transactionRepository;
 
     @Autowired
-    private WalletServiceImpl walletService;
+    private WalletService walletService;
 
     @Autowired
     private DatabaseSequenceService databaseSequenceService;

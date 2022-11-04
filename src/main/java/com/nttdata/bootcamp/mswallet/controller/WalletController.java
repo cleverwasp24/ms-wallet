@@ -3,8 +3,8 @@ package com.nttdata.bootcamp.mswallet.controller;
 import com.nttdata.bootcamp.mswallet.dto.*;
 import com.nttdata.bootcamp.mswallet.model.Wallet;
 import com.nttdata.bootcamp.mswallet.model.Transaction;
-import com.nttdata.bootcamp.mswallet.service.impl.WalletServiceImpl;
-import com.nttdata.bootcamp.mswallet.service.impl.TransactionServiceImpl;
+import com.nttdata.bootcamp.mswallet.service.TransactionService;
+import com.nttdata.bootcamp.mswallet.service.WalletService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,10 +19,10 @@ import reactor.core.publisher.Mono;
 public class WalletController {
 
     @Autowired
-    WalletServiceImpl walletService;
+    WalletService walletService;
 
     @Autowired
-    TransactionServiceImpl transactionService;
+    TransactionService transactionService;
 
     @GetMapping(value = "/findAllWallets")
     @ResponseBody
@@ -36,9 +36,9 @@ public class WalletController {
         return walletService.findAllByClientId(id);
     }
 
-    @PostMapping(value = "/createSavingsWallet")
+    @PostMapping(value = "/createWallet")
     @ResponseStatus(HttpStatus.CREATED)
-    public Mono<String> createSavingsWallet(@RequestBody WalletDTO savingsWalletDTO) {
+    public Mono<String> createWallet(@RequestBody WalletDTO savingsWalletDTO) {
         return walletService.createWallet(savingsWalletDTO);
     }
 
