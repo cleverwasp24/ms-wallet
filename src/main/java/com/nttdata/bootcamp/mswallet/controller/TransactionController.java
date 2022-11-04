@@ -14,7 +14,7 @@ import reactor.core.publisher.Mono;
 
 @Log4j2
 @RestController
-@RequestMapping("/bootcamp/transaction")
+@RequestMapping("/bootcamp/walletTransaction")
 public class TransactionController {
 
     @Autowired
