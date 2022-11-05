@@ -15,7 +15,7 @@ spring:
       port: 27017
       auto-index-creation: 'true'
       database: mswallet
-      host: localhost
+      host: mongodb
   config:
     import: optional:configserver:http://localhost:8090
   application:
