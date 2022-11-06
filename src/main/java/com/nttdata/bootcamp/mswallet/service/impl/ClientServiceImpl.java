@@ -18,7 +18,7 @@ public class ClientServiceImpl implements ClientService {
 
     public ClientServiceImpl(WebClient.Builder webClientBuilder) {
         //microservicio cliente
-        this.webClient = webClientBuilder.baseUrl("http://localhost:8081").build();
+        this.webClient = webClientBuilder.baseUrl("http://ms-gateway:8088").build();
     }
 
     @CircuitBreaker(name = "service-client", fallbackMethod = "findByIdFallback")

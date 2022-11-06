@@ -17,7 +17,7 @@ spring:
       database: mswallet
       host: mongodb
   config:
-    import: optional:configserver:http://localhost:8090
+    import: optional:configserver:http://config-server:8090
   application:
     name: ms-wallet
 logging:
@@ -28,7 +28,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8089/eureka/
+      defaultZone: http://ms-discovery:8089/eureka/
 resilience4j:
   circuitbreaker:
     configs:

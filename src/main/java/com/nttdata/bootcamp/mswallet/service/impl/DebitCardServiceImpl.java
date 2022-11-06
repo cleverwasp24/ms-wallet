@@ -19,7 +19,7 @@ public class DebitCardServiceImpl implements DebitCardService {
 
     public DebitCardServiceImpl(WebClient.Builder webClientBuilder) {
         //microservicio cards
-        this.webClient = webClientBuilder.baseUrl("http://localhost:8084").build();
+        this.webClient = webClientBuilder.baseUrl("http://ms-gateway:8088").build();
     }
 
     @CircuitBreaker(name = "service-debit-card", fallbackMethod = "findByIdFallback")
