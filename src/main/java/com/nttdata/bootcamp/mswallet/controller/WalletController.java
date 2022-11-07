@@ -38,8 +38,8 @@ public class WalletController {
 
     @PostMapping(value = "/createWallet")
     @ResponseStatus(HttpStatus.CREATED)
-    public Mono<String> createWallet(@RequestBody WalletDTO savingsWalletDTO) {
-        return walletService.createWallet(savingsWalletDTO);
+    public Mono<String> createWallet(@RequestBody WalletDTO walletDTO) {
+        return walletService.createWallet(walletDTO);
     }
 
     @GetMapping(value = "/find/{id}")
