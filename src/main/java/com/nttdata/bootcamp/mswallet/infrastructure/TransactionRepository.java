@@ -11,12 +11,12 @@ import java.time.LocalDateTime;
 @Repository
 public interface TransactionRepository extends ReactiveMongoRepository<Transaction, Long> {
 
-    Flux<Transaction> findAllByWalletId(Long accountId);
+    Flux<Transaction> findAllByWalletId(Long walletId);
 
-    Flux<Transaction> findAllByWalletIdOrderByTransactionDateDesc(Long accountId);
+    Flux<Transaction> findAllByWalletIdOrderByTransactionDateDesc(Long walletId);
 
-    Flux<Transaction> findAllByWalletIdAndTransactionDateBetween(Long accountId, LocalDateTime start, LocalDateTime end);
+    Flux<Transaction> findAllByWalletIdAndTransactionDateBetween(Long walletId, LocalDateTime start, LocalDateTime end);
 
-    Mono<Transaction> findByWalletIdAndTransactionDateBeforeOrderByTransactionDateDesc(Long accountId, LocalDateTime date);
+    Mono<Transaction> findByWalletIdAndTransactionDateBeforeOrderByTransactionDateDesc(Long walletId, LocalDateTime date);
 
 }
