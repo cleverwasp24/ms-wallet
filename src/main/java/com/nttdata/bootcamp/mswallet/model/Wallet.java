@@ -35,7 +35,7 @@ public class Wallet {
     private Double balance;
     @NonNull
     private Double initialBalance;
-    @NonNull
+    @Nullable
     private Long debitCardId;
     @NonNull
     private String imeiNumber;

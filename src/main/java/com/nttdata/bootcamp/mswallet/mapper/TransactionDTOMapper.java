@@ -36,9 +36,13 @@ public class TransactionDTOMapper {
     }
 
     public Transaction generateDestinationWalletTransaction(Transaction transaction) {
-        Transaction destinationTransaction = modelMapper.map(transaction, Transaction.class);
+        Transaction destinationTransaction = new Transaction();
         destinationTransaction.setWalletId(transaction.getDestinationWalletId());
+        destinationTransaction.setDestinationWalletId(transaction.getDestinationWalletId());
+        destinationTransaction.setTransactionType(transaction.getTransactionType());
+        destinationTransaction.setAmount(transaction.getAmount());
         destinationTransaction.setDescription("RECEIVE WALLET TRANSFER +$ " + transaction.getAmount());
+        destinationTransaction.setTransactionDate(LocalDateTime.now());
         return destinationTransaction;
     }
 }
